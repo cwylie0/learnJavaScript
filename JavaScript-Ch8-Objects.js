@@ -1,111 +1,116 @@
-const artists = ['Picasso', 'Kahlo', 'Matisse', 'Utamaro'];
+// Write your fasterShip object literal below
+let fasterShip = {
+  'Fuel Type': 'Turbo Fuel',
+  color: 'silver'
+};
 
-artists.forEach(artist => {
-  console.log(artist + ' is one of my favorite artists.');
-});
+console.log(fasterShip);
 
-const numbers = [1, 2, 3, 4, 5];
+let spaceship = {
+  passengers: [{
+    name: 'Space Cat'
+  }],
+  homePlanet: 'Earth',
+  color: 'silver',
+  'Fuel Type': 'Turbo Fuel',
+  'Active Mission': true,
+  numCrew: 5,
+  flightPath: ['Venus', 'Mars', 'Saturn'],
+  'Secret Mission': 'Discover life outside of Earth.',
+  telescope: {
+    yearBuilt: 2018,
+    model: "91031-XLT",
+    focalLength: 2032
+  },
+  crew: {
+    captain: {
+      name: 'Lily',
+      degree: 'Computer Engineering',
+      cheerTeam() {
+        console.log('You got this!')
+      }
+    },
+    'chief officer': {
+      name: 'Dan',
+      degree: 'Aerospace Engineering',
+      agree() {
+        console.log('I agree, captain!')
+      }
+    },
+    medic: {
+      name: 'Clementine',
+      degree: 'Physics',
+      announce() {
+        console.log(`Jets on!`)
+      }
+    },
+    translator: {
+      name: 'Shauna',
+      degree: 'Conservation Science',
+      powerFuel() {
+        console.log('The tank is full!')
+      }
+    }
+  },
+  engine: {
+    model: "Nimbus2000"
+  },
+  nanoelectronics: {
+    computer: {
+      terabytes: 100,
+      monitors: "HD"
+    },
+    backup: {
+      battery: "Lithium",
+      terabytes: 50
+    }
+  }
+};
 
-const squareNumbers = numbers.map(number => {
-  return number * number;
-});
+let retreatMessage = 'We no longer wish to conquer your planet. It is full of dogs, which we do not care for.';
 
-console.log(squareNumbers);
+const alienShip = {
+  retreat() {
+    console.log(retreatMessage);
+  },
+  takeOff() {
+    console.log('Spim... Borp... Glix... Blastoff!')
+  }
+};
 
-const things = ['desk', 'chair', 5, 'backpack', 3.14, 100];
+alienShip.retreat();
+alienShip.takeOff();
 
-const onlyNumbers = things.filter(thing => {
-  return typeof thing === 'number';
-});
+const crewCount = spaceship.numCrew;
+const planetArray = spaceship.flightPath;
+const capFave = spaceship.crew.captain['favorite foods'][0];
+const firstPassenger = spaceship.passengers[0];
 
-console.log(onlyNumbers);
+let propName = 'Active Mission';
 
-/* OUTPUTS
-Picasso is one of my favorite artists.
-Kahlo is one of my favorite artists.
-Matisse is one of my favorite artists.
-Utamaro is one of my favorite artists.
-[ 1, 4, 9, 16, 25 ]
-[ 5, 3.14, 100 ]
- */
+const isActive = spaceship['Active Mission'];
+console.log(isActive);
 
-const animals = ['hippo', 'tiger', 'lion', 'seal', 'cheetah', 'monkey', 'salamander', 'elephant'];
+spaceship.color = 'glorious gold';
+spaceship.numEngines = 5;
+delete spaceship['Secret Mission'];
 
-const foundAnimal = animals.findIndex(animals => {
-	return animals === 'elephant';
-});
+let greenEnergy = object => {
+  object['Fuel Type'] = 'avocado oil';
+}
 
-console.log(foundAnimal);
+let remotelyDisable = object => {
+  object.disabled = true;
+}
 
-const startsWithS = animals.findIndex(animals => {
-	return animals[0] === 's';
-});
+greenEnergy(spaceship);
+remotelyDisable(spaceship);
+console.log(spaceship);
 
-console.log(startsWithS);
+for (let crewMember in spaceship.crew) {
+  console.log(`${crewMember}: ${spaceship.crew[crewMember].name}`)
+};
 
-// OUTPUTS 7, 3
-
-const newNumbers = [1, 3, 5, 7];
-
-const newSum = newNumbers.reduce((accumulator, currentValue) => {
-  console.log('The value of accumulator: ', accumulator);
-  console.log('The value of currentValue: ', currentValue);
-  return accumulator + currentValue
-}, 100)
-
-/* OUTPUTS
-The value of accumulator:  100
-The value of currentValue:  1
-The value of accumulator:  101
-The value of currentValue:  3
-The value of accumulator:  104
-The value of currentValue:  5
-The value of accumulator:  109
-The value of currentValue:  7
-The value of currentValue:  7
-*/
-
-
-const cities = ['Orlando', 'Dubai', 'Edinburgh', 'Chennai', 'Accra', 'Denver', 'Eskisehir', 'Medellin', 'Yokohama'];
-
-const nums = [1, 50, 75, 200, 350, 525, 1000];
-
-//  Choose a method that will return undefined
-cities.forEach(city => console.log('Have you visited ' + city + '?'));
-
-// Choose a method that will return a new array
-const longCities = cities.filter(city => city.length > 7);
-
-// Choose a method that will return a single value
-const word = cities.reduce((acc, currVal) => {
-  return acc + currVal[0]
-}, "C");
-
-console.log(word)
-
-// Choose a method that will return a new array
-const smallerNums = nums.map(num => num - 5);
-
-// Choose a method that will return a boolean value
-nums.some(num => num < 0);
-
-/* OUTPUTS
-Have you visited Orlando?
-Have you visited Dubai?
-Have you visited Edinburgh?
-Have you visited Chennai?
-Have you visited Accra?
-Have you visited Denver?
-Have you visited Eskisehir?
-Have you visited Medellin?
-Have you visited Yokohama?
-CODECADEMY
-*/
-
-/*
-.forEach() is used to execute the same code on every element in an array but does not change the array and returns undefined.
-.map() executes the same code on every element in an array and returns a new array with the updated elements.
-.filter() checks every element in an array to see if it meets certain criteria and returns a new array with the elements that return truthy for the criteria.
-.findIndex() returns the index of the first element of an array which satisfies a condition in the callback function. It returns -1 if none of the elements in the array satisfies the condition.
-.reduce() iterates through an array and takes the values of the elements and returns a single value.
-*/
+for (let crewMember in spaceship.crew) {
+  console.log(`${spaceship.crew[crewMember].name}: ${spaceship.crew[crewMember].degree}`)
+};
