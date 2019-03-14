@@ -1,0 +1,77 @@
+<script>
+    // run this function when the document is loaded
+window.onload = function() {
+
+// create a couple of elements in an otherwise empty HTML page
+var heading = document.createElement("h2");
+var heading_text = document.createTextNode("DOM Subheading");
+heading.appendChild(heading_text);
+document.body.appendChild(heading);
+}
+
+var paragraphs = document.getElementsByTagName("p");
+// paragraphs[0] is the first <p> element
+// paragraphs[1] is the second <p> element, etc.
+paragraphs[2].style.color = "cyan";
+paragraphs[2].innerHTML = "I have rewritten this paragraph's content with JavaScript."
+
+var headers = document.getElementsByTagName("h1");
+headers[0].style.color = "magenta";
+
+function setBodyAttr(attr, value){
+if (document.body) eval('document.body.'+attr+'="'+value+'"');
+else notSupported();
+}
+</script>
+
+<html>
+
+<body>
+
+    <h1>DOM Practice</h1>
+    <p>The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects. That way, programming languages can connect to the page.</p>
+    <p>A Web page is a document. This document can be either displayed in the browser window or as the HTML source. But it is the same document in both cases. The Document Object Model (DOM) represents that same document so it can be manipulated. The DOM is an object-oriented representation of the web page, which can be modified with a scripting language such as JavaScript.</p>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>A</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>B</td>
+        </tr>
+    </table>
+
+    <p>The W3C DOM and WHATWG DOM standards are implemented in most modern browsers. Many browsers extend the standard, so care must be exercised when using them on the web where documents may be accessed by various browsers with different DOMs.</p>
+    <hr>
+    <div style="margin: .5in; height: 400;">
+        <p><b><tt>text</tt></b></p>
+        <form>
+            <select onChange="setBodyAttr('text',
+            this.options[this.selectedIndex].value);">
+                <option value="black">black
+                <option value="darkblue">darkblue
+            </select>
+            <p><b><tt>bgColor</tt></b></p>
+            <select onChange="setBodyAttr('bgColor',
+            this.options[this.selectedIndex].value);">
+                <option value="white">white
+                <option value="lightgrey">gray
+            </select>
+            <p><b><tt>link</tt></b></p>
+            <select onChange="setBodyAttr('link',
+            this.options[this.selectedIndex].value);">
+                <option value="blue">blue
+                <option value="green">green
+            </select> <small>
+                <a href="http://some.website.tld/page.html" id="sample">
+                    (sample link)</a></small><br>
+        </form>
+        <form>
+            <input type="button" value="version" onclick="ver()" />
+        </form>
+    </div>
+
+</body>
+
+</html>
