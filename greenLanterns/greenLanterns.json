@@ -1,0 +1,57 @@
+{
+  "squadName": "Green Lanterns",
+  "homeTown": "Coast City",
+  "formed": 1940,
+  "secretBase": "Planet Oa",
+  "active": true,
+  "members": [
+    {
+      "name": "Hal Jordan",
+      "height": "6'2\"",
+      "weight": 186,
+      "earthProfession": "Fighter Pilot",
+      "powers": [
+        "Radiation resistance",
+        "Turning tiny",
+        "Radiation blast"
+      ]
+    },
+    {
+      "name": "John Stewart",
+      "height": "6'1\"",
+      "weight": 210,
+      "earthProfession": "Architect & Marine",
+      "powers": [
+        "Million tonne punch",
+        "Damheight resistance",
+        "Superhuman reflexes"
+      ]
+    },
+    {
+      "name": "Guy Gardner",
+      "height": "6'0\"",
+      "weight": 180,
+      "earthProfession": "Gym Teacher",
+      "powers": [
+        "Immortality",
+        "Heat Immunity",
+        "Inferno",
+        "Teleportation",
+        "Interdimensional travel"
+      ]
+    },
+    {
+      "name": "Kyle Rayner",
+      "height": "5'11\"",
+      "weight": 175,
+      "earthProfession": "Artist",
+      "powers": [
+        "Immortality",
+        "Heat Immunity",
+        "Inferno",
+        "Teleportation",
+        "Interdimensional travel"
+      ]
+    }
+  ]
+}
